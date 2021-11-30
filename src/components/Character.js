@@ -1,5 +1,10 @@
-function Character({ character, favCharacter, updateFavorites }) {
+import React, { useContext } from 'react';
+import { FavouritesContext } from '../App';
 
+function Character({ character, updateFavorites }) {
+
+  const favCharacter = useContext(FavouritesContext);
+  
   let imageSrc = "https://picsum.photos/300/200/?blur";
   if (character.imageUrl) {
     // API seems to include extra path for images so here we strip it off to fetch raw image
