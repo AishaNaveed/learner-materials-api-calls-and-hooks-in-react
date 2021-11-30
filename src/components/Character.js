@@ -1,5 +1,11 @@
 function Character({ character }) {
 
+  let imageSrc = "https://picsum.photos/300/200/?blur";
+  if (character.imageUrl) {
+    // API seems to include extra path for images so here we strip it off to fetch raw image
+    imageSrc = character.imageUrl.substring(0, character.imageUrl.indexOf('/revision'));
+  }
+
   return (
     <article className="character-item">
 
@@ -9,7 +15,7 @@ function Character({ character }) {
         Add to Favourites
       </div>
 
-      <img className="character-item__img" src={character.imageUrl} alt={character.name} />
+      <img className="character-item__img" src={imageSrc} alt={character.name} />
 
     </article>
   )
