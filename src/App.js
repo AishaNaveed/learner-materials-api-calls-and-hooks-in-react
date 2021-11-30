@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
@@ -11,8 +11,14 @@ function App() {
   const [characters, setCharacters] = useState([ ]);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const getCharacters = async (pageNumber) => {
+    // Utilised Axios for API calls
+    const apiResponse = await axios.get(`http://api.disneyapi.dev/characters?page=${pageNumber}`);
+    setCharacters(apiResponse.data.data);
+  };
+  
   useEffect(()=>{
-    console.log("useEffect hook");
+    getCharacters(1);
   }, []);
 
   return (
