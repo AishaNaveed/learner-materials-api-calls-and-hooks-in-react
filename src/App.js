@@ -10,6 +10,7 @@ function App() {
   // Some dummy state representing disney characters
   const [characters, setCharacters] = useState([ ]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [favCharacter, setFavCharacter] = useState([]);
 
   const getCharacters = async (pageNumber) => {
     // Utilised Axios for API calls
@@ -25,7 +26,7 @@ function App() {
     <div className="page">
       <Header currentPage={currentPage} />
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <CharacterContainer characters={characters} />
+      <CharacterContainer characters={characters} favCharacter={favCharacter} updateFavorites={setFavCharacter}/>
     </div>
   );
 }
