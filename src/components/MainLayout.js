@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Header from './Header';
 import CharacterContainer from './CharacterContainer';
-import Navigation from './Navigation';
+import Navigation from './Navigation/Navigation';
 import React, { useState, useEffect } from 'react';
 import { useFavourites } from './FavProvider';
 
@@ -9,7 +9,7 @@ function MainLayout() {
 
   const [characters, setCharacters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [favCharacter, setFavCharacter] = useState(true);
+  const [favCharacter, setFavCharacter] = useState(false);
 
   const favourite = useFavourites();
 
