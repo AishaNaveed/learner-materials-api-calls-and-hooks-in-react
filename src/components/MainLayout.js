@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Header from './Header';
+import Header from './Header/Header';
 import CharacterContainer from './CharacterContainer';
 import Navigation from './Navigation/Navigation';
 import React, { useState, useEffect } from 'react';
